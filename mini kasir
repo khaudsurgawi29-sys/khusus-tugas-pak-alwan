@@ -1,0 +1,72 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int menu, jumlah, harga;
+    int total, bayar, kembalian;
+    char ulang;
+
+    do {
+        cout << "==========================" << endl;
+        cout << "       MINI KASIR" << endl;
+        cout << "==========================" << endl;
+        cout << "1. Soto  - Rp15000" << endl;
+        cout << "2. Rawon - Rp20000" << endl;
+        cout << "==========================" << endl;
+
+        cout << "Pilih menu (1/2) : ";
+        cin >> menu;
+
+        if (menu == 1) {
+            harga = 15000;
+            cout << "Menu: Soto" << endl;
+        } 
+        else if (menu == 2) {
+            harga = 20000;
+            cout << "Menu: Rawon" << endl;
+        } 
+        else {
+            cout << "Pilihan tidak tersedia!" << endl;
+            continue;
+        }
+
+        cout << "Jumlah pesanan : ";
+        cin >> jumlah;
+
+        if (jumlah <= 0) {
+            cout << "Jumlah tidak valid!" << endl;
+            continue;
+        }
+
+        total = harga * jumlah;
+
+        cout << "\nTotal Harga : Rp" << total << endl;
+        cout << "Uang Bayar  : Rp";
+        cin >> bayar;
+
+        if (bayar < total) {
+            cout << "Uang pembayaran kurang!" << endl;
+        } 
+        else {
+            kembalian = bayar - total;
+
+            cout << "\n==========================" << endl;
+            cout << "       STRUK KASIR" << endl;
+            cout << "==========================" << endl;
+            cout << "Jumlah      : " << jumlah << endl;
+            cout << "Total       : Rp" << total << endl;
+            cout << "Bayar       : Rp" << bayar << endl;
+            cout << "Kembalian   : Rp" << kembalian << endl;
+            cout << "==========================" << endl;
+            cout << "Terima kasih!" << endl;
+        }
+
+        cout << "\nTransaksi lagi? (y/n): ";
+        cin >> ulang;
+
+    } while (ulang == 'y' || ulang == 'Y');
+
+    cout << "\nProgram selesai!" << endl;
+
+    return 0;
+}
