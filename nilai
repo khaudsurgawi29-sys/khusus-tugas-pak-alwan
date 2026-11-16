@@ -1,0 +1,42 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int nilai;
+    char ulang;
+
+    do {
+        cout << "========================" << endl;
+        cout << "    PROGRAM NILAI" << endl;
+        cout << "========================" << endl;
+
+        cout << "Masukkan nilai: ";
+        cin >> nilai;
+
+        if (nilai < 0 || nilai > 100) {
+            cout << "Nilai tidak valid!" << endl;
+        }
+        else if (nilai > 90) {
+            cout << "Grade: A" << endl;
+        }
+        else if (nilai >= 80) {
+            cout << "Grade: B" << endl;
+        }
+        else if (nilai >= 70) {
+            cout << "Grade: C" << endl;
+        }
+        else {
+            cout << "Grade: D" << endl;
+        }
+
+        cout << "\nInput nilai lagi? (y/n): ";
+        cin >> ulang;
+
+        cout << endl;
+
+    } while (ulang == 'y' || ulang == 'Y');
+
+    cout << "Program selesai!" << endl;
+
+    return 0;
+}
